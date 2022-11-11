@@ -54,7 +54,7 @@ function searchCity(event) {
   let city = input.value.toLowerCase();
   let cityNamePage = document.querySelector("#cityOnPage");
   cityNamePage.innerHTML = capitalizeFirstLetter(city);
-  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let apiKey = "842b36d55cb28eba74a018029d56b04c";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
 
@@ -94,13 +94,12 @@ function currentPositionWeather(event) {
     let currentWeather = response.data.weather[0].main;
     let weather = document.querySelector("#weatherValue");
     weather.innerHTML = currentWeather;
-
   }
   function currentPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     let unit = "metric";
-    let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+    let apiKey = "842b36d55cb28eba74a018029d56b04c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(showTemperatureGps);
   }
